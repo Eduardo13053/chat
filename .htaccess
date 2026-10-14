@@ -1,0 +1,10 @@
+Options -Indexes
+<FilesMatch "^(?!index\.php$|api\.php$).*\.(php|sql|md|txt|bat|json|lock)$">
+  Require all denied
+</FilesMatch>
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+</IfModule>

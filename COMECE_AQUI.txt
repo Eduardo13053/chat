@@ -1,0 +1,17 @@
+MOOVE CORRIGIDO — COMO APLICAR
+
+1. Extraia o ZIP ou clone o repositório. Abra a pasta do projeto no VS Code.
+2. Copie config.example.php para config.php se ainda não existir. Preencha config.php com URL do Supabase, chave publishable/anon e app_url.
+   Se já tem config.php configurado, preserve seus valores. Nunca use service_role/secret.
+3. Faça backup do banco. No SQL Editor do mesmo Supabase, execute o arquivo INTEIRO:
+   sql/00_instalar_ou_atualizar.sql
+   Ele depende das tabelas base do seu TCC e não apaga usuários/tabelas existentes.
+4. Instale PHP 8.1+ com curl, mbstring, openssl e sessões.
+5. No terminal, dentro da pasta moove:
+   php -S localhost:8000 router.php
+   No Windows, também pode executar iniciar_moove.bat.
+6. Abra http://localhost:8000 e faça login novamente.
+7. Leia CORRECOES.md e teste o roteiro do README.md.
+
+O Supabase real não foi modificado nesta revisão. As credenciais do ZIP original
+são exemplos. TESTES.md explica o que foi verificado localmente.
